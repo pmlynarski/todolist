@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="input-container">
+    <input [formControl]="inputFormControl" />
+    <button (click)="saveItem()">Save</button>
+  </div>
+  <div class="list-container">
+    <app-todo-item
+      *ngFor="let item of data$ | async; index as i; trackBy: trackFn"
+      [data]="item"
+      (toggleStatus)="toggleStatus(i)"
+    ></app-todo-item>
+  </div>
+</div>

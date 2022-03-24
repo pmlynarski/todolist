@@ -1,0 +1,4 @@
+<div class="item-container" [ngClass]="{ done: item.status | isItemDone }">
+  <span>{{ item?.title }}</span>
+  <input type="checkbox" [checked]="item.status | isItemDone" (change)="toggleStatus.emit()" />
+</div>
